@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/yerlan/bookings/pkg/config"
-	"github.com/yerlan/bookings/pkg/handlers"
-	"github.com/yerlan/bookings/pkg/render"
+	"github.com/yerlan/bookings/internal/config"
+	"github.com/yerlan/bookings/internal/handlers"
+	"github.com/yerlan/bookings/internal/render"
 )
 
 const portNum = ":8080"
@@ -49,5 +49,7 @@ func main(){
 		Handler:  routes(&app),
 	}
 	err = srv.ListenAndServe()
-	log.Fatal(err)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
