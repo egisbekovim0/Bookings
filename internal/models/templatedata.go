@@ -1,5 +1,7 @@
 package models
 
+import "github.com/yerlan/bookings/internal/forms"
+
 //template data holds data sent from handlers to templates
 type TemplateData struct {
 	StringMap map[string]string
@@ -10,4 +12,5 @@ type TemplateData struct {
 	Flash string
 	Warning string
 	Error string
+	Form *forms.Form
 }
